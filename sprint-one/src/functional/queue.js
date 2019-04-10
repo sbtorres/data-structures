@@ -30,7 +30,7 @@ var Queue = function() {
       storage[newKey] = storage[key];
     }
     delete storage[keys.length];
-    return storage;
+    return dequeued;
   };
 
   // Return size of queue
