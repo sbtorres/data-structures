@@ -20,6 +20,7 @@ var queueMethods = {
   },
 
   dequeue : function() {
+
     var dequeued = this.storage['1'];
 
     delete this.storage['1'];
@@ -28,7 +29,7 @@ var queueMethods = {
       this.storage[Number(key) - 1] = this.storage[key];
     }
 
-    delete this.storage[keys[this.size() - 1]];
+    delete this.storage[this.size()];
     return dequeued;
   },
   size: function(){
