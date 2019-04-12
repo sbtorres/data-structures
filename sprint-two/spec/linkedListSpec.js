@@ -50,6 +50,24 @@ describe('linkedList', function() {
     linkedList.removeHead();
     expect(linkedList.contains(4)).to.equal(false);
   });
+  
+  //tests we added
+  it('should have a next property that is null when a node is created', function() {
+    linkedList.addToTail(4);
+    console.log(linkedList);
+    expect(linkedList.head.next).to.equal(null);
+  });
+  
+  it('should not have a head whose next property is null when more than two objects are in list', function() {
+    linkedList.addToTail(4);
+    linkedList.addToTail(5);
+    expect(linkedList.head.next).to.not.equal(null);
+  });
+  
+  it('should have head and tail properties set to null on instantiation', function() {
+    expect(linkedList.head).to.equal(null);
+    expect(linkedList.tail).to.equal(null);
+  });
 
-  // add more tests here to test the functionality of linkedList
+  
 });
