@@ -11,7 +11,7 @@ Graph.prototype.addNode = function(value) {
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(target) {
   for(var node of Object.keys(this)){
-    if (node === JSON.stringify(target)) {
+    if (node === (typeof target === 'number' ? JSON.stringify(target) : target)) {
       return true;
     }
   }
@@ -69,3 +69,6 @@ Graph.prototype.forEachNode = function(cb) {
  * Complexity: What is the time complexity of the above functions?
  */
 
+var graph = new Graph();
+graph.addNode('a');
+graph.contains('a');
