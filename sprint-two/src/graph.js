@@ -11,7 +11,7 @@ Graph.prototype.addNode = function(value) {
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(target) {
   for(var node of Object.keys(this)){
-    if (node === (typeof target === 'number' ? JSON.stringify(target) : target)) {
+    if(node === target + '') {
       return true;
     }
   }
