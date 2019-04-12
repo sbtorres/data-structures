@@ -20,6 +20,11 @@ describe('graph', function() {
     expect(graph.contains(1)).to.equal(true);
   });
 
+  it('should accept nodes that have strings as keys', function() {
+    graph.addNode('a');
+    expect(graph.contains('a')).to.equal(true);
+  });
+
   it('should remove nodes that were inserted', function() {
     graph.addNode(2);
     expect(graph.contains(2)).to.equal(true);
