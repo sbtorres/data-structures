@@ -68,4 +68,11 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+  it('should create an instance that has an edges property that is an empty array when adding a new node', function() {
+    graph.addNode(1);
+    expect(graph['1'].edges).to.eql([]);
+    expect(graph['1']).to.eql({edges: []});
+
+  });
 });
