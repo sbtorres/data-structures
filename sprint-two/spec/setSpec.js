@@ -14,6 +14,7 @@ describe('set', function() {
   it('should add values to a set', function() {
     set.add('Susan Sarandon');
     set.add('Danny Glover');
+    console.log(set);
     expect(set.contains('Danny Glover')).to.equal(true);
     expect(set.contains('Susan Sarandon')).to.equal(true);
   });
@@ -23,5 +24,21 @@ describe('set', function() {
     set.remove('Mel Gibson');
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
+
+  it('should add and remove multiple values correctly', function() {
+    set.add('Mel Gibson');
+    set.add('Scott Torres');
+    console.log(set);
+    set.remove('Mel Gibson');
+    console.log(set);
+    set.add('Rafe Autie');
+    set.add('Snoopy');
+    set.remove('Snoopy');
+    console.log(set);
+    expect(set.contains('Mel Gibson')).to.equal(false);
+    expect(set.contains('Scott Torres')).to.equal(true);
+  });
+
+  
 
 });
