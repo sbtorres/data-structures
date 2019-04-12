@@ -1,11 +1,16 @@
-
+//Notes for tomorrow when you don't remember
+//addNode is complete.
+//edges will be an array that represents a pointer to any other node that it is connected to, represented by a value (which is a string FYI)
+//
 
 // Instantiate a new graph
 var Graph = function() {
+    
 };
 
 // Add a node to the graph, passing in the node's value.
-Graph.prototype.addNode = function(node) {
+Graph.prototype.addNode = function(value) {
+  this[value] = {edges: []};
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
