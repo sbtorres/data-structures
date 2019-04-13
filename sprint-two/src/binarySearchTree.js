@@ -58,7 +58,7 @@ BinarySearchTree.prototype.depthFirstLog = function(cb) {
     this.depthFirstLog.call(this.right, cb);
   }
 };
-
+//hi
 
 /*
  * Complexity: What is the time complexity of the above functions?
