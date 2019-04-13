@@ -47,6 +47,24 @@ describe('hashTable', function() {
     window.getIndexBelowMaxForKey = oldHashFunction;
   });
 
+  // our added tests
+  it('should initialize the hash table to have 8 empty arrays in storage', function() {
+    for (let i = 0; i < hashTable._limit; i++) {
+      expect(hashTable._storage.get(i)).to.eql([]);
+    }
+  });
+
+  it('should have 7 empty arrays after inserting one key value pair', function() {
+    var count = 0;
+    hashTable.insert('test', 'testVal');
+    for (let i = 0; i < hashTable._limit; i++) {
+      if (JSON.stringify(hashTable._storage.get(i)) === '[]') {
+        count++;
+      }
+    }
+    expect(count).to.equal(7);
+  });
+
   // (Advanced! Remove the extra "x" when you want the following tests to run)
   xit ('should double in size when needed', function() {
     _.each(people, function(person) {
